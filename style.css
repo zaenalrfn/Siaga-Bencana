@@ -33,6 +33,13 @@
   padding: 0;
 }
 
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -43,7 +50,6 @@ body {
   color: var(--text-primary-light);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 /* Dark Mode Defaults */
