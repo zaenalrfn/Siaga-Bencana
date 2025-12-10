@@ -38,4 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+    // Initialize AOS
+    AOS.init({
+        once: true,
+        duration: 800,
+        offset: 100
+    });
 });
