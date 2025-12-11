@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input Data Donasi - SiagaBencana</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="no-scrollbar">
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo-link">
+                <div class="logo-icon">
+                    <span class="material-symbols-outlined text-xl">flood</span>
+                </div>
+                <h2 class="logo-text">
+                    SiagaBencana
+                </h2>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="desktop-nav">
+                <a href="index.html#home" class="nav-link">Beranda</a>
+                <a href="index.html#disasters" class="nav-link">Jenis Bencana</a>
+                <a href="index.html#programs" class="nav-link">Program</a>
+                <a href="index.html#impact" class="nav-link">Dampak & Data</a>
+                <a href="index.html#contact" class="nav-link">Kontak</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="nav-actions">
+                <button class="lang-btn">
+                    EN/ID
+                </button>
+                <a href="index.html#programs" class="donate-btn">
+                    <span class="donate-btn-content">
+                        <span class="material-symbols-outlined text-sm">volunteer_activism</span>
+                        Donasi
+                    </span>
+                </a>
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="index.html#home" class="mobile-nav-link">Beranda</a>
+            <a href="index.html#disasters" class="mobile-nav-link">Jenis Bencana</a>
+            <a href="index.html#programs" class="mobile-nav-link">Program</a>
+            <a href="index.html#impact" class="mobile-nav-link">Dampak & Data</a>
+            <a href="index.html#contact" class="mobile-nav-link">Kontak</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-disasters" style="min-height: calc(100vh - 4rem);">
+            <div class="container" style="max-width: 800px;">
+                <div class="section-header" style="margin-bottom: 3rem;">
+                    <h1 class="section-title">Input Master Donasi</h1>
+                    <p class="section-subtitle">Tambah program bantuan baru untuk ditampilkan pada halaman utama.</p>
+                </div>
+
+                <div class="contact-form-card" data-aos="fade-up">
+                    <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <!-- Judul Program -->
+                        <div class="form-group">
+                            <label class="form-label">Judul Program</label>
+                            <input type="text" class="form-input" placeholder="Contoh: Paket Pangan Darurat" required>
+                        </div>
+
+                        <div class="form-grid-2" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+                            <!-- Kategori -->
+                            <div class="form-group">
+                                <label class="form-label">Kategori</label>
+                                <select class="form-input">
+                                    <option value="logistik">Logistik & Pangan</option>
+                                    <option value="kesehatan">Kesehatan</option>
+                                    <option value="hunian">Shelter & Hunian</option>
+                                    <option value="pendidikan">Pendidikan</option>
+                                    <option value="lainnya">Lainnya</option>
+                                </select>
+                            </div>
+
+                            <!-- Status -->
+                            <div class="form-group">
+                                <label class="form-label">Status Urgensi</label>
+                                <select class="form-input">
+                                    <option value="normal">Normal</option>
+                                    <option value="mendesak">Mendesak</option>
+                                    <option value="darurat">Darurat</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Target & Terkumpul -->
+                        <div class="form-grid-2" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+                            <div class="form-group">
+                                <label class="form-label">Target Donasi (Rp)</label>
+                                <input type="number" class="form-input" placeholder="Contoh: 100000000">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Terkumpul Saat Ini (Rp)</label>
+                                <input type="number" class="form-input" placeholder="Contoh: 5000000">
+                            </div>
+                        </div>
+
+                        <!-- Image URL -->
+                        <div class="form-group">
+                            <label class="form-label">URL Gambar</label>
+                            <input type="url" class="form-input" placeholder="https://example.com/image.jpg">
+                            <p style="font-size: 0.75rem; color: #6b7280; margin-top: 0.25rem;">Pastikan URL gambar
+                                dapat diakses publik.</p>
+                        </div>
+
+                        <!-- Deskripsi -->
+                        <div class="form-group">
+                            <label class="form-label">Deskripsi Singkat</label>
+                            <textarea class="form-input" rows="4"
+                                placeholder="Jelaskan tujuan dan detail program bantuan ini..."></textarea>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <button type="submit" class="btn-primary-lg" style="width: 100%;">
+                                Simpan Program
+                            </button>
+                            <button type="button" class="btn-outline-lg"
+                                style="width: 100%; border: 1px solid #d1d5db; color: #374151;">
+                                Batal
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+
+    <style>
+        /* Inline responsive fix for this page */
+        @media (min-width: 640px) {
+            .form-grid-2 {
+                grid-template-columns: 1fr 1fr !important;
+            }
+        }
+    </style>
+</body>
+
+</html>

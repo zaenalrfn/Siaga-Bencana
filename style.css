@@ -1226,6 +1226,22 @@ button {
   box-shadow: 0 0 0 1px var(--primary);
 }
 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.dark .form-label {
+  color: #d1d5db;
+}
+
 /* Footer */
 .footer {
   border-top: 1px solid #e5e7eb;

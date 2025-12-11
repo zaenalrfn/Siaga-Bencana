@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donasi Sekarang - SiagaBencana</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans:wght@400;500;700&display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="no-scrollbar">
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <!-- Logo -->
+            <a href="index.html" class="logo-link">
+                <div class="logo-icon">
+                    <span class="material-symbols-outlined text-xl">flood</span>
+                </div>
+                <h2 class="logo-text">
+                    SiagaBencana
+                </h2>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="desktop-nav">
+                <a href="index.html#home" class="nav-link">Beranda</a>
+                <a href="index.html#disasters" class="nav-link">Jenis Bencana</a>
+                <a href="index.html#programs" class="nav-link">Program</a>
+                <a href="index.html#impact" class="nav-link">Dampak & Data</a>
+                <a href="index.html#contact" class="nav-link">Kontak</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="nav-actions">
+                <button class="lang-btn">
+                    EN/ID
+                </button>
+                <a href="index.html#programs" class="donate-btn">
+                    <span class="donate-btn-content">
+                        <span class="material-symbols-outlined text-sm">volunteer_activism</span>
+                        Donasi
+                    </span>
+                </a>
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" class="mobile-menu-btn">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu">
+            <a href="index.html#home" class="mobile-nav-link">Beranda</a>
+            <a href="index.html#disasters" class="mobile-nav-link">Jenis Bencana</a>
+            <a href="index.html#programs" class="mobile-nav-link">Program</a>
+            <a href="index.html#impact" class="mobile-nav-link">Dampak & Data</a>
+            <a href="index.html#contact" class="mobile-nav-link">Kontak</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-disasters" style="min-height: calc(100vh - 4rem);">
+            <div class="container" style="max-width: 800px;">
+                <div class="section-header" style="margin-bottom: 3rem;">
+                    <h1 class="section-title">Formulir Donasi</h1>
+                    <p class="section-subtitle">Terima kasih atas kepedulian Anda. Bantuan Anda sangat berarti bagi
+                        mereka yang
+                        membutuhkan.</p>
+                </div>
+
+                <div class="contact-form-card" data-aos="fade-up">
+                    <form style="display: flex; flex-direction: column; gap: 2rem;">
+
+                        <!-- Nominal Donation -->
+                        <div class="form-group">
+                            <label class="form-label">Pilih Nominal Donasi</label>
+                            <div class="nominal-grid">
+                                <button type="button" class="nominal-btn" onclick="selectNominal(this, 10000)">Rp
+                                    10.000</button>
+                                <button type="button" class="nominal-btn" onclick="selectNominal(this, 25000)">Rp
+                                    25.000</button>
+                                <button type="button" class="nominal-btn active" onclick="selectNominal(this, 50000)">Rp
+                                    50.000</button>
+                                <button type="button" class="nominal-btn" onclick="selectNominal(this, 100000)">Rp
+                                    100.000</button>
+                                <button type="button" class="nominal-btn" onclick="selectNominal(this, 250000)">Rp
+                                    250.000</button>
+                                <button type="button" class="nominal-btn" onclick="selectNominal(this, 500000)">Rp
+                                    500.000</button>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <label class="form-label" style="font-size: 0.75rem; margin-bottom: 0.5rem;">Nominal
+                                    Lainnya</label>
+                                <input type="number" class="form-input" id="custom-amount"
+                                    placeholder="Masukkan jumlah donasi (Min. Rp 10.000)"
+                                    onfocus="clearNominalSelection()">
+                            </div>
+                        </div>
+
+                        <hr style="border: 0; border-top: 1px solid #e5e7eb; opacity: 0.5;">
+
+                        <!-- Donor Info -->
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label class="form-label">Nama Lengkap</label>
+                                <input type="text" class="form-input" placeholder="Nama Anda atau 'Hamba Allah'">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Nomor WhatsApp / Email</label>
+                                <input type="text" class="form-input" placeholder="Untuk konfirmasi donasi">
+                            </div>
+                        </div>
+
+                        <!-- Payment Method -->
+                        <div class="form-group">
+                            <label class="form-label">Metode Pembayaran</label>
+                            <select class="form-input">
+                                <option value="qris">QRIS (Gopay, OVO, ShopeePay, Dana)</option>
+                                <option value="bca">Transfer Bank BCA</option>
+                                <option value="mandiri">Transfer Bank Mandiri</option>
+                                <option value="bri">Transfer Bank BRI</option>
+                                <option value="bni">Transfer Bank BNI</option>
+                            </select>
+                        </div>
+
+                        <!-- Prayer -->
+                        <div class="form-group">
+                            <label class="form-label">Doa & Dukungan (Opsional)</label>
+                            <textarea class="form-input" rows="3"
+                                placeholder="Tuliskan doa atau pesan semangat untuk saudara kita..."></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <button type="button" class="btn-primary-lg" style="width: 100%; margin-top: 1rem;">
+                            Lanjut Pembayaran
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function selectNominal(btn, amount) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.nominal-btn').forEach(b => b.classList.remove('active'));
+            // Add active class to clicked button
+            btn.classList.add('active');
+            // Clear custom input
+            document.getElementById('custom-amount').value = '';
+        }
+
+        function clearNominalSelection() {
+            document.querySelectorAll('.nominal-btn').forEach(b => b.classList.remove('active'));
+        }
+    </script>
+
+    <style>
+        /* Inline styles for this page specific elements */
+        .nominal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        @media (min-width: 640px) {
+            .nominal-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .form-grid-2 {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .nominal-btn {
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            background-color: transparent;
+            font-weight: 600;
+            color: #374151;
+            transition: all 0.2s;
+        }
+
+        .dark .nominal-btn {
+            border-color: #533c3d;
+            color: #d1d5db;
+        }
+
+        .nominal-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background-color: rgba(234, 42, 51, 0.05);
+        }
+
+        .nominal-btn.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 6px -1px rgba(234, 42, 51, 0.2);
+        }
+    </style>
+</body>
+
+</html>
